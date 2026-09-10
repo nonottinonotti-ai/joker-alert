@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "revision": "初期配布版",
+  "alerts": [
+    {
+      "id": "preset-5",
+      "seconds": 290,
+      "name": "5分 加勢判定",
+      "enabled": true,
+      "audio": "",
+      "fileName": "",
+      "speech": "5分の加勢判定、10秒前です。加勢の準備をしてください。"
+    },
+    {
+      "id": "preset-10",
+      "seconds": 590,
+      "name": "10分 加勢判定",
+      "enabled": true,
+      "audio": "",
+      "fileName": "",
+      "speech": "10分の加勢判定、10秒前です。加勢の準備をしてください。"
+    },
+    {
+      "id": "preset-15",
+      "seconds": 890,
+      "name": "15分 加勢判定",
+      "enabled": true,
+      "audio": "",
+      "fileName": "",
+      "speech": "15分の加勢判定、10秒前です。加勢の準備をしてください。"
+    },
+    {
+      "id": "preset-20",
+      "seconds": 1190,
+      "name": "20分 加勢判定",
+      "enabled": true,
+      "audio": "",
+      "fileName": "",
+      "speech": "20分の加勢判定、10秒前です。加勢の準備をしてください。"
+    },
+    {
+      "id": "preset-25",
+      "seconds": 1490,
+      "name": "25分 加勢判定",
+      "enabled": true,
+      "audio": "",
+      "fileName": "",
+      "speech": "25分の加勢判定、10秒前です。加勢の準備をしてください。"
+    }
+  ]
+}
