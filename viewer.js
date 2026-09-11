@@ -25,6 +25,7 @@
     $('next-seconds').textContent=next?Math.max(0,Math.ceil(next.seconds-elapsed/1000)):'—';
   }
   function render(){
+    alerts.sort((a,b)=>a.seconds-b.seconds);
     $('alerts').replaceChildren();$('enabled-count').textContent=alerts.filter(a=>a.enabled).length+' ON';
     alerts.forEach((a,i)=>{
       const card=document.createElement('article');card.className='alert-card'+(!a.enabled?' off':'')+(timer.fired.has(a.id)?' fired':'');
