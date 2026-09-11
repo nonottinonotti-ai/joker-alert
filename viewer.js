@@ -59,7 +59,7 @@
       if(!response.ok)throw new Error('HTTP '+response.status);
       const text=await response.text();if(text.length>4*1024*1024)throw new Error('容量超過');
       const data=JSON.parse(text);if(!SharedConfig.valid(data))throw new Error('形式不正');
-      alerts=data.alerts.map(a=>({...a,enabled:typeof preferences[a.id]==='boolean'?preferences[a.id]:a.enabled}));ready=true;$('save-state').textContent='配布版：'+data.revision;render();report('管理者の設定を読み込みました。試聴で音量を確認してからSTARTしてください。');
+      alerts=[...data.alerts].sort((a,b)=>a.seconds-b.seconds).map(a=>({...a,enabled:typeof preferences[a.id]==='boolean'?preferences[a.id]:a.enabled}));ready=true;$('save-state').textContent='配布版：'+data.revision;render();report('管理者の設定を読み込みました。試聴で音量を確認してからSTARTしてください。');
     }catch{report('配布設定を読み込めません。通信を確認して再読み込みしてください。解決しない場合は管理者に連絡してください。');$('save-state').textContent='設定の読み込みに失敗';lock();}
   })();
 })();
