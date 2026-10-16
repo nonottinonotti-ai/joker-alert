@@ -7,3 +7,58 @@
 .image-header{gap:28px;flex-wrap:wrap}.header-art{display:block;width:538px;max-width:100%;height:auto;border-radius:10px}.header-title{display:flex;flex:1;min-width:0;flex-direction:column;align-items:flex-start;gap:16px}.header-title h1 span{display:block;margin:4px 0 0}@media(max-width:1000px){.image-header{gap:18px}.header-art{width:min(538px,100%)}.header-title{flex-basis:100%;flex-direction:row;justify-content:space-between;align-items:center}}
 
 .schedule-name{display:flex;align-items:baseline;gap:16px;font-size:18px;overflow-wrap:anywhere}.schedule-time{font:600 24px var(--number-font);white-space:nowrap}.audio-row .file-name{flex:1;color:var(--muted);font-size:14px}
+.schedule-time-input {
+  width: 76px;
+  margin-right: 12px;
+  padding: 6px 8px;
+
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+
+  color: inherit;
+  background: rgba(255,255,255,.06);
+
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 6px;
+}
+
+.schedule-time-input:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.timer-adjust,
+.time-adjust {
+  margin-top: 18px;
+  padding: 14px;
+
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+
+  background: rgba(255,255,255,.03);
+}
+
+.adjust-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.adjust-controls button {
+  min-width: 68px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.adjust-note {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: .85rem;
+  opacity: .7;
+}
+
+#restore-alerts {
+  margin-top: 10px;
+}
