@@ -15,7 +15,24 @@
       <div class="panel-top"><span class="eyebrow">ELAPSED TIME</span><span id="state" class="badge">待機中</span></div>
       <div class="clock-wrap"><p class="clock" id="elapsed" role="timer" aria-label="経過時間">00:00</p><div class="duration">経過時間 <span>/ 30:00</span></div></div>
       <div class="track" role="progressbar" aria-label="30分の進行" aria-valuemin="0" aria-valuemax="1800" aria-valuenow="0"><div id="progress"></div></div><div class="scale"><span>00:00</span><span>15:00</span><span>30:00</span></div>
-      <div class="controls"><button id="start" class="primary">▶ START</button><button id="pause" disabled>Ⅱ PAUSE</button><button id="reset">↺ RESET</button></div>
+      <div class="controls"><button id="start" class="primary">▶ START</button><button id="pause" disabled>Ⅱ PAUSE</button><button id="reset">↺ RESET</button></div><div class="controls">
+  <button id="start" class="primary">▶ START</button>
+  <button id="pause" disabled>Ⅱ PAUSE</button>
+  <button id="reset">↺ RESET</button>
+</div>
+
+<div class="timer-adjust">
+  <div>
+    <span class="eyebrow">BATTLE TIME ADJUST</span>
+    <span class="adjust-note">今回の抗争だけ補正</span>
+  </div>
+
+  <div class="adjust-controls">
+    <button type="button" data-timer-shift="-5">−5秒</button>
+    <button type="button" data-timer-shift="-1">−1秒</button>
+    <button type="button" data-timer-shift="1">＋1秒</button>
+    <button type="button" data-timer-shift="5">＋5秒</button>
+  </div>
       <div class="next"><div><span class="eyebrow">NEXT ALERT</span><h2 id="next-name">5分 加勢判定</h2><p id="next-time">04:50 に通知</p></div><div class="countdown"><strong id="next-seconds">290</strong><span>秒後</span></div></div>
       <p id="message" class="message" role="status" aria-live="polite">STARTで音声を有効にして開始します。</p>
       <div class="note"><span class="note-icon">i</span><p>使用中は画面を開いたままにしてください。<br>画面ロック・バックグラウンドでは通知が遅れることがあります。</p></div>
@@ -23,12 +40,43 @@
     </section>
     <section class="alerts-panel" aria-labelledby="alerts-title">
       <div class="alerts-heading"><div><span class="eyebrow">VOICE SCHEDULE</span><h2 id="alerts-title">配布アラート <span id="enabled-count">5 ON</span></h2></div></div>
-      <p class="intro">音声・時刻は共通です。ON/OFFは自分の端末だけに反映されます。</p>
-      <div id="alerts"></div>
-      <div class="settings-footer"><span id="save-state" role="status">配布設定を読み込み中</span></div>
-      <details><summary>配布設定・時刻同期について</summary><p>日本時間の12:00〜12:30、19:00〜19:30、20:00〜20:30、21:00〜21:30、22:00〜22:30、23:00〜23:30は現在時刻に同期します。STARTまたはRESUME時に過ぎた通知はスキップします。時間帯外は通常の30分タイマーです。端末の時計を自動設定にしてください。</p><p>管理者の設定をページ表示時に読み込みます。更新を受け取るには、抗争開始前にページを再読み込みしてください。進行中の設定は変わりません。</p><p>ON/OFFは利用者ごとに変更・保存できます。時刻・名称・音声は管理者が設定します。最初に試聴して、音量・マナーモードを確認してください。MP3未設定時は端末の日本語読み上げを使います。</p></details>
-    </section>
-  </div><footer><span>JOKER / VOICE ALERT</span><span>30分に、集中する。</span></footer>
-</main>
-</body>
-</html>
+<p class="intro">
+  アラート時刻・ON/OFFは自由に変更できます。
+  設定はこの端末に保存されます。
+</p>
+
+<div id="alerts"></div>
+
+<div class="time-adjust">
+  <span class="eyebrow">ALERT TIME ADJUST</span>
+  <h3>アラート時刻を一括調整</h3>
+
+  <div class="adjust-controls">
+    <button type="button" data-alert-shift="-5">−5秒</button>
+    <button type="button" data-alert-shift="-1">−1秒</button>
+    <button type="button" data-alert-shift="1">＋1秒</button>
+    <button type="button" data-alert-shift="5">＋5秒</button>
+  </div>
+
+  <button type="button" id="restore-alerts">
+    初期設定に戻す
+  </button>
+</div>
+
+<div class="settings-footer">
+  <span id="save-state" role="status">この端末に保存されます</span>
+</div>
+      <details>  <summary>時刻設定について</summary>
+  <p>
+    アラート時刻・ON/OFFはこの端末だけに保存されます。
+    他の利用者には影響しません。
+  </p>
+  <p>
+    「今回の抗争だけ補正」は、現在進行中のタイマーだけを前後に調整します。
+    RESETすると補正はリセットされます。
+  </p>
+  <p>
+    「アラート時刻を一括調整」は、すべてのアラート時刻をまとめて変更します。
+    変更内容はこの端末に保存されます。
+  </p>
+</details>
